@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 
 # Конфигурация Redis
-REDIS_HOST = "192.168.1.255"
+REDIS_HOST = "192.168.1.138"
 REDIS_PORT = 6379
 REDIS_DB = 0
 
@@ -35,7 +35,7 @@ async def startup_event():
 
     try:
         # Создаем подключение к Redis
-        r = redis.Redis(host='192.168.244.32', port=6379, db=0)
+        r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 
         # Проверяем соединение с Redis
         await r.ping()
